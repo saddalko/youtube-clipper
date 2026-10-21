@@ -18,6 +18,9 @@ def find_ffmpeg() -> str | None:
         winget = Path(local) / "Microsoft" / "WinGet" / "Packages"
         candidates.extend(sorted(winget.glob("Gyan.FFmpeg*/**/bin/ffmpeg.exe")))
     candidates.extend([
+        Path("/opt/homebrew/bin/ffmpeg"),
+        Path("/usr/local/bin/ffmpeg"),
+        Path("/usr/bin/ffmpeg"),
         Path(r"C:\ProgramData\chocolatey\bin\ffmpeg.exe"),
         Path(r"C:\ffmpeg\bin\ffmpeg.exe"),
         Path(r"C:\Program Files\ffmpeg\bin\ffmpeg.exe"),
